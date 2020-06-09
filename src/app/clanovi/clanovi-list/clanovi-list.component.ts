@@ -14,11 +14,11 @@ export class ClanoviListComponent implements OnInit {
   constructor(private clanService: ClanService) { }
 
   ngOnInit(): void {
-      // this.clanService.clanoviUpdated
-      //   .subscribe(clanovi => {
-      //     this.clanovi = clanovi;
-      //   });
-      this.clanovi = this.clanService.getClanovi();
+      this.clanService.clanoviUpdated
+        .subscribe(clanovi => {
+          this.clanovi = clanovi;
+        });
+      this.clanService.getClanovi();
   }
 
 }
