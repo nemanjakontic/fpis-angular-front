@@ -1,0 +1,23 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <form [formGroup]="formUplatnica" (ngSubmit)="formSubmit()">
+      <div class="form-group">
+        <label for="datum">Datum uplate</label>
+        <input type="text" formControlName="datum" id="datum">
+      </div>
+      <div class="form-group">
+        <label for="iznos">Iznos uplate</label>
+        <input type="text" formControlName="iznos" id="iznos">
+      </div>
+      <div class="form-group">
+        <label for="clan">Clan</label>
+        <select class="form-control" id="clan" formControlName="clan">
+          <option *ngFor="let clan of clanovi" [ngValue]="clan" >{{clan.clanId}} - {{clan.ime}} {{clan.prezime}}</option>
+        </select>
+      </div>
+      <button [disabled]="!formUplatnica.valid" type="submit" class="btn btn-primary">UPLATI</button>
+    </form>
+  </div>
+</div>
+</div>

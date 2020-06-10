@@ -8,11 +8,7 @@ import {Subject} from 'rxjs';
 })
 export class ClanService {
 
-  clanovi: Clan[] = [
-      // new Clan(1, 'Nemanja', 'Kontic', '24-06-1997', 'https://analizaumetnickogdela.files.wordpress.com/2014/06/monalisa.jpg'),
-      // new Clan(2, 'Nemanja', 'Kontic', '24-06-1997', 'https://analizaumetnickogdela.files.wordpress.com/2014/06/monalisa.jpg'),
-      // new Clan(3, 'Nemanja', 'Kontic', '24-06-1997', 'https://analizaumetnickogdela.files.wordpress.com/2014/06/monalisa.jpg')
-  ];
+  clanovi: Clan[] = [];
   clanoviUpdated = new Subject<Clan[]>();
 
   constructor(private http: HttpClient) { }

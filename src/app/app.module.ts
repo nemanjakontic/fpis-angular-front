@@ -8,6 +8,11 @@ import { ClanoviComponent } from './clanovi/clanovi.component';
 import { ClanoviListComponent } from './clanovi/clanovi-list/clanovi-list.component';
 import { ClanItemComponent } from './clanovi/clanovi-list/clan-item/clan-item.component';
 import {HttpClientModule} from '@angular/common/http';
+import { UplatniceComponent } from './uplatnice/uplatnice.component';
+import { UplatniceListComponent } from './uplatnice/uplatnice-list/uplatnice-list.component';
+import { UplatniceItemComponent } from './uplatnice/uplatnice-list/uplatnice-item/uplatnice-item.component';
+import { UplatnicaNovaComponent } from './uplatnice/uplatnica-nova/uplatnica-nova.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +20,17 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     ClanoviComponent,
     ClanoviListComponent,
-    ClanItemComponent
+    ClanItemComponent,
+    UplatniceComponent,
+    UplatniceListComponent,
+    UplatniceItemComponent,
+    UplatnicaNovaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
