@@ -16,8 +16,34 @@ export class UplatnicaService {
   getUplatniceZaClana(clanId: number) {
     this.http.get<{uplatnice: Uplatnica[], poruka: string}>('http://localhost:8080/api/uplate/' + clanId)
       .subscribe(response => {
-        this.uplatniceUpdated.next(response.uplatnice);
+        this.uplatnice = response.uplatnice;
+        this.uplatniceUpdated.next(this.uplatnice.slice());
       });
   }
 
+  getUplatnica(uplatnicaId: number) {
+    return this.http
+      .get<{uplatnica: Uplatnica, poruka: string}>
+      ('http://localhost:8080/api/uplate/jedna/' + uplatnicaId);
+  }
+
+  addUplatnica(uplatnica: any) {
+    this.http
+      .post<{uplatnica: Uplatnica, poruka: string}>
+      ('http://localhost:8080/api/uplate/', uplatnica)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
+
+  deleteUplatnica(uplatnicaId: number) {
+    this.http
+      .delete<{poruka: string}>('http://localhost:8080/api/uplate/' + uplatnicaId)
+      .subscribe(response => {
+        const updatedUplatnice = this.uplatnice
+          .filter(uplatnica => uplatnica.uplatnicaId !== uplatnicaId);
+        this.uplatnice = updatedUplatnice;
+        this.uplatniceUpdated.next(this.uplatnice.slice());
+      });
+  }
 }
