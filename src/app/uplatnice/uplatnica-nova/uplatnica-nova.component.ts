@@ -58,12 +58,12 @@ export class UplatnicaNovaComponent implements OnInit {
   }
 
   formSubmit() {
-    // console.log(this.formUplatnica.value);
-    const uplatnica = this.formUplatnica.value;
+    this.uplatnica = this.formUplatnica.value;
     if (this.editMode === true) {
-      // radimo update
+      this.uplatnica.uplatnicaId = this.uplatnicaId;
+      this.uplatnicaService.updateUplatnica(this.uplatnica);
     } else {
-      this.uplatnicaService.addUplatnica(uplatnica);
+      this.uplatnicaService.addUplatnica(this.uplatnica);
     }
     this.formUplatnica.reset();
   }

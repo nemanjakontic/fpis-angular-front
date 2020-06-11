@@ -46,4 +46,14 @@ export class UplatnicaService {
         this.uplatniceUpdated.next(this.uplatnice.slice());
       });
   }
+
+  updateUplatnica(uplatnica: Uplatnica) {
+    console.log(uplatnica);
+    this.http
+      .post<{uplatnica: Uplatnica, poruka: string}>
+      ('http://localhost:8080/api/uplate/update', uplatnica)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
 }

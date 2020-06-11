@@ -1,12 +1,12 @@
-<div class="row justify-content-center">
-  <div class="col-12">
-    <div class="card" style="width: 18rem;">
+<div class="row d-flex flex-row justify-content-center">
+  <div class="col-lg-10 d-flex justify-content-center">
+    <div class="card kartica senka" style="width: 18rem;">
       <img src="{{clan.slika}}" class="card-img-top" alt="...">
-      <div class="card-body">
+      <div class="card-body klasaZaKarticu">
         <h5 class="card-title">{{clan.ime}} {{clan.prezime}}</h5>
         <p class="card-text">{{clan.datumRodjenja}}</p>
-        <a routerLink="/{{clan.clanId}}/uplatnice" class="btn btn-primary">UPLATE</a>
-        <a href="#" class="btn btn-primary">POTVRDE</a>
+        <button routerLink="/{{clan.clanId}}/uplatnice" class="button-1 mb-1">UPLATE</button>
+        <button class="button-2">POTVRDE</button>
       </div>
     </div>
   </div>
