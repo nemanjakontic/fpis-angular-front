@@ -27,10 +27,11 @@ export class UplatnicaService {
       ('http://localhost:8080/api/uplate/jedna/' + uplatnicaId);
   }
 
-  addUplatnica(uplatnica: any) {
+  addUplatnica(uplatnica: Uplatnica) {
+    console.log(uplatnica);
     this.http
       .post<{uplatnica: Uplatnica, poruka: string}>
-      ('http://localhost:8080/api/uplate/', uplatnica)
+      ('http://localhost:8080/api/uplate', uplatnica)
       .subscribe(response => {
         console.log(response);
       });

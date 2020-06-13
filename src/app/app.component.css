@@ -1,3 +1,15 @@
 /*body {*/
 /*  background-color: #333333;*/
 /*}*/
+
+.border-container{
+  border: 2px solid red;
+}
+
+.border-row{
+  border: 2px solid blue;
+}
+
+.border-col{
+  border: 2px solid green;
+}

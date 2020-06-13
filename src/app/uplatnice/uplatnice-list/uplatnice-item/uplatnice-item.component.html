@@ -1,15 +1,15 @@
-<div class="row justify-content-center">
-  <div class="col-12">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Uplatnica broj {{uplatnica.uplatnicaId}}</h5>
-        <p class="card-text">{{uplatnica.datumUplate}}</p>
-        <p class="card-text">{{uplatnica.clan.ime}} {{uplatnica.clan.prezime}}</p>
-        <a class="btn btn-primary">PRIKAZI</a>
-        <a class="btn btn-primary" (click)="obrisiUplatnicu()">OBRISI</a>
-        <a class="btn btn-primary" (click)="izmeniUplatnicu()">IZMENI</a>
-      </div>
-    </div>
+<div class="card kartica senka" style="width: 18rem; background-color: #F1AE5C">
+  <div class="card-body">
+    <h5 class="card-title">Uplatnica broj {{uplatnica.uplatnicaId}}</h5>
+    <p class="card-text">{{uplatnica.datumUplate}}</p>
+    <p class="card-text">{{uplatnica.clan.ime}} {{uplatnica.clan.prezime}}</p>
+    <!--        <a class="btn btn-primary">PRIKAZI</a>-->
+  </div>
+  <div class="d-flex flex-column align-content-center text-center">
+    <a class="button-1" (click)="obrisiUplatnicu()">OBRISI</a>
+    <a class="button-2" (click)="izmeniUplatnicu()">IZMENI</a>
   </div>
 </div>
+
+
 

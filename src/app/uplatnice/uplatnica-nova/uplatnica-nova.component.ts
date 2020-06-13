@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Clan} from '../../modeli/clan.model';
 import {ClanService} from '../../services/clan.service';
 import {UplatnicaService} from '../../services/uplatnica.service';
@@ -28,6 +28,7 @@ export class UplatnicaNovaComponent implements OnInit {
     this.clanService.clanoviUpdated
       .subscribe(clanovi => {
         this.clanovi = clanovi;
+        console.log('postavka clanova');
       });
     this.clanService.getClanovi();
 
@@ -40,10 +41,11 @@ export class UplatnicaNovaComponent implements OnInit {
         this.uplatnicaService.getUplatnica(this.uplatnicaId)
           .subscribe(response => {
             this.uplatnica = response.uplatnica;
+            console.log('postavljanje clana');
             this.formUplatnica = new FormGroup({
-              datumUplate: new FormControl(this.uplatnica.datumUplate),
-              iznos: new FormControl(this.uplatnica.iznos),
-              clan: new FormControl(this.uplatnica.clan)
+              datumUplate: new FormControl(this.uplatnica.datumUplate, Validators.required),
+              iznos: new FormControl(this.uplatnica.iznos, Validators.required),
+              clan: new FormControl(this.uplatnica.clan, Validators.required)
             });
           });
       } else {
@@ -51,9 +53,9 @@ export class UplatnicaNovaComponent implements OnInit {
       }
     });
     this.formUplatnica = new FormGroup({
-      datumUplate: new FormControl(null),
-      iznos: new FormControl(null),
-      clan: new FormControl(null)
+      datumUplate: new FormControl(null, Validators.required),
+      iznos: new FormControl(null, Validators.required),
+      clan: new FormControl(null, Validators.required)
     });
   }
 

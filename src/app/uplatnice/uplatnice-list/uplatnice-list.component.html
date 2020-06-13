@@ -1,4 +1,13 @@
-<div *ngFor="let uplatnica of uplatnice">
-  <app-uplatnice-item [uplatnica]="uplatnica"></app-uplatnice-item>
+<!--<div class="row border-row mt-4 d-flex flex-row justify-content-center align-content-center">-->
+<!--  <div class="col-md-4 border-col d-flex flex-row justify-content-center align-content-center" *ngFor="let uplatnica of uplatnice">-->
+<!--    <app-uplatnice-item [uplatnica]="uplatnica"></app-uplatnice-item>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="row">
+  <div class="col-md-6 col-lg-4 mt-2 d-flex justify-content-center" *ngFor="let uplatnica of uplatnice">
+    <app-uplatnice-item [uplatnica]="uplatnica" class="d-flex"></app-uplatnice-item>
+  </div>
 </div>
+
 

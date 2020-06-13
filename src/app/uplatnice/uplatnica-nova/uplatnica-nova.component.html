@@ -1,23 +1,24 @@
-<div class="container">
+<!--<div class="container">-->
+<h1 class="naslov">{{this.editMode ? 'IZMENI' : 'KREIRAJ'}} UPLATU</h1>
 <div class="row">
-  <div class="col-md-4 offset-md-4">
-    <form [formGroup]="formUplatnica" (ngSubmit)="formSubmit()">
+  <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <form [formGroup]="formUplatnica" (ngSubmit)="formSubmit()" class="forma">
       <div class="form-group">
         <label for="datumUplate">Datum uplate</label>
-        <input type="text" formControlName="datumUplate" id="datumUplate">
+        <input type="text" formControlName="datumUplate" id="datumUplate" class="form-control">
       </div>
       <div class="form-group">
         <label for="iznos">Iznos uplate</label>
-        <input type="text" formControlName="iznos" id="iznos">
+        <input type="text" formControlName="iznos" id="iznos" class="form-control">
       </div>
       <div class="form-group">
         <label for="clan">Clan</label>
-        <select class="form-control" id="clan" formControlName="clan">
-          <option *ngFor="let clan of clanovi" [ngValue]="clan" >{{clan.clanId}} - {{clan.ime}} {{clan.prezime}}</option>
+        <select class="form-control" id="clan" formControlName="clan" class="form-control">
+          <option *ngFor="let clan of clanovi" [ngValue]="clan">{{clan.clanId}} - {{clan.ime}} {{clan.prezime}}</option>
         </select>
       </div>
-      <button [disabled]="!formUplatnica.valid" type="submit" class="btn btn-primary">UPLATI</button>
+      <button [disabled]="!formUplatnica.valid" type="submit" class="button-1">{{this.editMode ? 'IZMENI UPLATU' : 'UPLATI'}}</button>
     </form>
   </div>
 </div>
-</div>
+
