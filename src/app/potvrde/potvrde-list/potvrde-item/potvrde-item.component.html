@@ -1,0 +1,20 @@
+<div class="card kartica senka" style="width: 18rem; background-color: #F1AE5C">
+  <div class="card-body">
+    <h5 class="card-title">Potvrda broj {{potvrda.potvrdaId}}</h5>
+    <p class="card-text">{{potvrda.datumIzdavanja}}</p>
+    <p class="card-text">{{potvrda.uplatnica.clan.ime}} {{potvrda.uplatnica.clan.prezime}}</p>
+    <!--        <a class="btn btn-primary">PRIKAZI</a>-->
+    <ul *ngFor="let stavka of potvrda.stavke">
+      <li>{{stavka.stavkaId}} - {{stavka.mesec}}.{{stavka.godina}} = {{stavka.iznos}}</li>
+    </ul>
+  </div>
+
+<!--  <div class="d-flex flex-column align-content-center text-center">-->
+<!--    <a class="button-1" (click)="obrisiUplatnicu()">OBRISI</a>-->
+<!--    <a class="button-2" (click)="izmeniUplatnicu()">IZMENI</a>-->
+<!--  </div>-->
+</div>
+
+
+
+

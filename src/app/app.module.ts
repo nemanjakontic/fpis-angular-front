@@ -13,6 +13,9 @@ import { UplatniceListComponent } from './uplatnice/uplatnice-list/uplatnice-lis
 import { UplatniceItemComponent } from './uplatnice/uplatnice-list/uplatnice-item/uplatnice-item.component';
 import { UplatnicaNovaComponent } from './uplatnice/uplatnica-nova/uplatnica-nova.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PotvrdeComponent } from './potvrde/potvrde.component';
+import { PotvrdeListComponent } from './potvrde/potvrde-list/potvrde-list.component';
+import { PotvrdeItemComponent } from './potvrde/potvrde-list/potvrde-item/potvrde-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     UplatniceComponent,
     UplatniceListComponent,
     UplatniceItemComponent,
-    UplatnicaNovaComponent
+    UplatnicaNovaComponent,
+    PotvrdeComponent,
+    PotvrdeListComponent,
+    PotvrdeItemComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ClanoviComponent} from './clanovi/clanovi.component';
 import {UplatniceComponent} from './uplatnice/uplatnice.component';
 import {UplatnicaNovaComponent} from './uplatnice/uplatnica-nova/uplatnica-nova.component';
+import {PotvrdeComponent} from './potvrde/potvrde.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'clanovi', component: ClanoviComponent},
   { path: ':id/uplatnice', component: UplatniceComponent},
   { path: ':id/uplatnice/edit/:uplatnicaId', component: UplatnicaNovaComponent},
-  { path: 'uplatnice/nova', component: UplatnicaNovaComponent}
+  { path: 'uplatnice/nova', component: UplatnicaNovaComponent},
+  { path: ':id/potvrde', component: PotvrdeComponent}
 ];
 
 @NgModule({
