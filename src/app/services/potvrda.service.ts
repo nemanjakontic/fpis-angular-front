@@ -22,4 +22,11 @@ export class PotvrdaService {
         this.potvrdeUpdated.next(this.potvrde.slice());
       });
   }
+
+  dodajPotvrdu(potvrda: Potvrda) {
+    this.http.post('http://localhost:8080/api/potvrde', potvrda)
+      .subscribe(response => {
+        console.log(response);
+      });
+  }
 }

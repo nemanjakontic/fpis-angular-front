@@ -57,4 +57,13 @@ export class UplatnicaService {
         console.log(response);
       });
   }
+
+  getUplatnice() {
+    this.http.get<{uplatnice: Uplatnica[], poruka: string}>('http://localhost:8080/api/uplate')
+      .subscribe(response => {
+        console.log(response);
+        this.uplatnice = response.uplatnice;
+        this.uplatniceUpdated.next(this.uplatnice.slice());
+      });
+  }
 }

@@ -4,6 +4,7 @@ import {ClanoviComponent} from './clanovi/clanovi.component';
 import {UplatniceComponent} from './uplatnice/uplatnice.component';
 import {UplatnicaNovaComponent} from './uplatnice/uplatnica-nova/uplatnica-nova.component';
 import {PotvrdeComponent} from './potvrde/potvrde.component';
+import {PotvrdaNovaComponent} from './potvrde/potvrda-nova/potvrda-nova.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: ':id/uplatnice', component: UplatniceComponent},
   { path: ':id/uplatnice/edit/:uplatnicaId', component: UplatnicaNovaComponent},
   { path: 'uplatnice/nova', component: UplatnicaNovaComponent},
+  { path: 'potvrde/nova', component: PotvrdaNovaComponent},
   { path: ':id/potvrde', component: PotvrdeComponent}
 ];
 

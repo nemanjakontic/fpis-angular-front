@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { PotvrdeComponent } from './potvrde/potvrde.component';
 import { PotvrdeListComponent } from './potvrde/potvrde-list/potvrde-list.component';
 import { PotvrdeItemComponent } from './potvrde/potvrde-list/potvrde-item/potvrde-item.component';
+import { PotvrdaNovaComponent } from './potvrde/potvrda-nova/potvrda-nova.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PotvrdeItemComponent } from './potvrde/potvrde-list/potvrde-item/potvrd
     UplatnicaNovaComponent,
     PotvrdeComponent,
     PotvrdeListComponent,
-    PotvrdeItemComponent
+    PotvrdeItemComponent,
+    PotvrdaNovaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,11 @@
-export class Stavke {
-  public stavkaId: number;
-  public mesec: string;
-  public godina: number;
-  public iznos: number;
+import {Clanarina} from './clanarina.model';
 
-  constructor(stavkaId: number, mesec: string, godina: number, iznos: number) {
-    this.stavkaId = stavkaId;
-    this.mesec = mesec;
-    this.godina = godina;
-    this.iznos = iznos;
+export class Stavke {
+  public id: number;
+  public clanarina: Clanarina;
+
+  constructor(id: number, clanarina: Clanarina) {
+    this.id = id;
+    this.clanarina = clanarina;
   }
 }

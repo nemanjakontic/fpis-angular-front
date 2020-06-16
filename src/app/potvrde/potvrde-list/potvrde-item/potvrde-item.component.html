@@ -5,7 +5,7 @@
     <p class="card-text">{{potvrda.uplatnica.clan.ime}} {{potvrda.uplatnica.clan.prezime}}</p>
     <!--        <a class="btn btn-primary">PRIKAZI</a>-->
     <ul *ngFor="let stavka of potvrda.stavke">
-      <li>{{stavka.stavkaId}} - {{stavka.mesec}}.{{stavka.godina}} = {{stavka.iznos}}</li>
+      <li>{{stavka.id}} - {{stavka.clanarina.mesec}}.{{stavka.clanarina.godina}} = {{stavka.clanarina.iznos}}</li>
     </ul>
   </div>
 

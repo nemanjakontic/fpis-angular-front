@@ -1,0 +1,67 @@
+.button-1{
+  background-color: #F1AE5C;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #333333;
+  border-top: 3px solid #333333;
+}
+
+.button-2{
+  background-color: #333333;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #F1AE5C;
+}
+
+.button-1:hover{
+  background-color: #333333;
+  border: 2px solid saddlebrown;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #F1AE5C;
+}
+
+.button-2:hover {
+  background-color: #F1AE5C;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #333333;
+}
+
+.forma {
+  color: #F1AE5C;
+}
+
+.naslov {
+  border: 2px solid #F1AE5C;
+  color: #F1AE5C;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 4.5rem;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+}
