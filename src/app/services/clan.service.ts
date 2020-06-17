@@ -18,6 +18,7 @@ export class ClanService {
      this.http
       .get<{clanovi: Clan[], poruka: string}>('http://localhost:8080/api/clanovi')
       .subscribe(response => {
+        console.log(response.clanovi);
         this.clanoviUpdated.next(response.clanovi);
       });
   }

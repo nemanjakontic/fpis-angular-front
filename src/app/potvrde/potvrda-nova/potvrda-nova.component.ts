@@ -70,8 +70,11 @@ export class PotvrdaNovaComponent implements OnInit {
     this.clanService.getClan(uplatnica.clan)
       .subscribe(clanarine => {
         console.log(clanarine);
-        for (let j = 0; j < clanarine.length && j < brojStavki; j++) {
-          const stavka: Stavke = new Stavke(null, clanarine[j]);
+        // izdvajanje neplacenih od placenih
+        const neplaceneClanarine = clanarine.filter(clanarina => clanarina.placena === false);
+        console.log(neplaceneClanarine);
+        for (let j = 0; j < neplaceneClanarine.length && j < brojStavki; j++) {
+          const stavka: Stavke = new Stavke(null, neplaceneClanarine[j]);
           this.stavke.push(stavka);
         }
       });
