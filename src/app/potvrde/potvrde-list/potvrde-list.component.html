@@ -1,4 +1,9 @@
 <div class="row">
+  <div *ngIf="potvrde?.length === 0" class="border-col d-flex flex-column col-8 offset-2 p-3" style="border: 5px solid #F1AE5C">
+    <h1 class="text-center" style="color: #F1AE5C">Izabrani clan nema nijednu potvrdu</h1>
+    <hr>
+    <button class="button-big" routerLink="/potvrde/nova">NOVA POTVRDA</button>
+  </div>
   <div class="col-md-6 col-lg-4 mt-2 d-flex justify-content-center" *ngFor="let potvrda of potvrde">
     <app-potvrde-item [potvrda]="potvrda" class="d-flex"></app-potvrde-item>
   </div>

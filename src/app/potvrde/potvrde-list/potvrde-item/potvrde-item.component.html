@@ -1,7 +1,7 @@
 <div class="card kartica senka" style="width: 18rem; background-color: #F1AE5C">
   <div class="card-body">
     <h5 class="card-title">Potvrda broj {{potvrda.potvrdaId}}</h5>
-    <p class="card-text">{{potvrda.datumIzdavanja}}</p>
+    <p class="card-text">{{potvrda.datumIzdavanja.toString().slice(0,10)}}</p>
     <p class="card-text">{{potvrda.uplatnica.clan.ime}} {{potvrda.uplatnica.clan.prezime}}</p>
     <!--        <a class="btn btn-primary">PRIKAZI</a>-->
     <ul *ngFor="let stavka of potvrda.stavke">

@@ -51,6 +51,25 @@
   color: #333333;
 }
 
+.button-1:disabled {
+  opacity: 0.5;
+}
+
+.button-1:disabled:hover {
+  opacity: 0.5;
+  background-color: #F1AE5C;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #333333;
+  border-top: 3px solid #333333;
+}
+
 .forma {
   color: #F1AE5C;
 }

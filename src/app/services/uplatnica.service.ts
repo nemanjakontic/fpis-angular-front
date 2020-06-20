@@ -10,6 +10,7 @@ export class UplatnicaService {
 
   uplatnice: Uplatnica[];
   uplatniceUpdated = new Subject<Uplatnica[]>();
+  poruka = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -34,6 +35,7 @@ export class UplatnicaService {
       ('http://localhost:8080/api/uplate', uplatnica)
       .subscribe(response => {
         console.log(response);
+        this.poruka.next(response.poruka);
       });
   }
 

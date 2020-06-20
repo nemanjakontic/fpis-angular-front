@@ -18,6 +18,9 @@ export class UplatnicaNovaComponent implements OnInit {
   editMode = false;
   uplatnica: Uplatnica;
   uplatnicaId: number;
+  danasnjiDatum = new Date();
+  poruka: string;
+  stiglaPoruka = false;
 
   constructor(private clanService: ClanService,
               private uplatnicaService: UplatnicaService,
@@ -53,7 +56,7 @@ export class UplatnicaNovaComponent implements OnInit {
       }
     });
     this.formUplatnica = new FormGroup({
-      datumUplate: new FormControl(null, Validators.required),
+      datumUplate: new FormControl(new Date(), Validators.required),
       iznos: new FormControl(null, Validators.required),
       clan: new FormControl(null, Validators.required)
     });
@@ -61,10 +64,16 @@ export class UplatnicaNovaComponent implements OnInit {
 
   formSubmit() {
     this.uplatnica = this.formUplatnica.value;
+    // this.uplatnica.datumUplate = new Date();
+    console.log(this.uplatnica);
     if (this.editMode === true) {
       this.uplatnica.uplatnicaId = this.uplatnicaId;
       this.uplatnicaService.updateUplatnica(this.uplatnica);
     } else {
+      this.uplatnicaService.poruka.subscribe(poruka => {
+        this.poruka = poruka;
+        this.stiglaPoruka = true;
+      });
       this.uplatnicaService.addUplatnica(this.uplatnica);
     }
     this.formUplatnica.reset();

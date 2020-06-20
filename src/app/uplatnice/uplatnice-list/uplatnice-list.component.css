@@ -9,3 +9,23 @@
 .border-col{
   border: 2px solid green;
 }
+
+.button-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #333333;
+  border: none;
+  color: #F1AE5C;
+  font-weight: bold;
+  border: 3px solid #F1AE5C;
+
+}
+
+.button-big:hover {
+  background-color: #F1AE5C;
+  color: #333333;
+  border: 3px solid #333333;
+}

@@ -44,7 +44,7 @@ export class PotvrdaNovaComponent implements OnInit {
     this.uplatnicaService.getUplatnice();
 
     this.formPotvrda = new FormGroup({
-      datumPotvrde: new FormControl(null, Validators.required),
+      datumPotvrde: new FormControl(new Date(), Validators.required),
       uplatnica: new FormControl(null, Validators.required)
     });
   }

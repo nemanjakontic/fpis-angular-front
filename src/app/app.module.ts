@@ -17,6 +17,7 @@ import { PotvrdeComponent } from './potvrde/potvrde.component';
 import { PotvrdeListComponent } from './potvrde/potvrde-list/potvrde-list.component';
 import { PotvrdeItemComponent } from './potvrde/potvrde-list/potvrde-item/potvrde-item.component';
 import { PotvrdaNovaComponent } from './potvrde/potvrda-nova/potvrda-nova.component';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { PotvrdaNovaComponent } from './potvrde/potvrda-nova/potvrda-nova.compon
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
