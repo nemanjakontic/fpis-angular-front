@@ -18,6 +18,9 @@ import { PotvrdeListComponent } from './potvrde/potvrde-list/potvrde-list.compon
 import { PotvrdeItemComponent } from './potvrde/potvrde-list/potvrde-item/potvrde-item.component';
 import { PotvrdaNovaComponent } from './potvrde/potvrda-nova/potvrda-nova.component';
 import {DatePipe} from '@angular/common';
+import { ClanarineComponent } from './clanarine/clanarine.component';
+import { ClanarineListComponent } from './clanarine/clanarine-list/clanarine-list.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {DatePipe} from '@angular/common';
     PotvrdeComponent,
     PotvrdeListComponent,
     PotvrdeItemComponent,
-    PotvrdaNovaComponent
+    PotvrdaNovaComponent,
+    ClanarineComponent,
+    ClanarineListComponent
   ],
   imports: [
     BrowserModule,

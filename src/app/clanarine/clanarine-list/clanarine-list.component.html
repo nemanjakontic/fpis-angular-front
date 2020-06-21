@@ -1,0 +1,47 @@
+<div *ngIf="clanarine?.length === 0">
+  <h1 class="text-center" style="color: #F1AE5C; border: 3px solid #F1AE5C">NE POSTOJE PODACI O CLANARINAMA ZA IZABRANOG CLANA</h1>
+</div>
+<table class="table" style="color: #F1AE5C" *ngIf="clanarine?.length > 0">
+  <thead>
+  <tr>
+    <th scope="col">#CLANARINA</th>
+    <th scope="col">MESEC</th>
+    <th scope="col">GODINA</th>
+    <th scope="col">PLACENA</th>
+    <th scope="col">IZNOS</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let clanarina of clanarine">
+      <td scope="row">{{clanarina.clanarinaId}}</td>
+      <td>{{clanarina.mesec}}</td>
+      <td>{{clanarina.godina}}</td>
+      <td>{{clanarina.placena ? 'DA' : 'NE'}}</td>
+      <td> = {{clanarina.iznos}}</td>
+    </tr>
+  </tbody>
+  <thead>
+  <tr>
+    <th scope="col">UKUPNO ZA PLACANJE</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">= {{ukupnoZaPlacanje}} RSD</th>
+  </tr>
+  <tr>
+    <th scope="col">UKUPNO PLACENO</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">= {{ukupnoPlaceno}} RSD</th>
+  </tr>
+  <tr>
+    <th scope="col">UKUPNO</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">= {{ukupno}} RSD</th>
+  </tr>
+  </thead>
+</table>
+

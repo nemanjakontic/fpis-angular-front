@@ -68,4 +68,5 @@ export class UplatnicaService {
         this.uplatniceUpdated.next(this.uplatnice.slice());
       });
   }
+
 }

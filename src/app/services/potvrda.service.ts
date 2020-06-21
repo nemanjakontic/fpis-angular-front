@@ -11,6 +11,7 @@ export class PotvrdaService {
 
   potvrde: Potvrda[];
   potvrdeUpdated = new Subject<Potvrda[]>();
+  poruka = new Subject<string>();
 
   constructor(private http: HttpClient) { }
 
@@ -24,9 +25,10 @@ export class PotvrdaService {
   }
 
   dodajPotvrdu(potvrda: Potvrda) {
-    this.http.post('http://localhost:8080/api/potvrde', potvrda)
+    this.http.post<{potvrda: Potvrda, poruka: string}>('http://localhost:8080/api/potvrde', potvrda)
       .subscribe(response => {
         console.log(response);
+        this.poruka.next(response.poruka);
       });
   }
 }

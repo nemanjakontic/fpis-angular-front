@@ -26,7 +26,10 @@ export class PotvrdaNovaComponent implements OnInit {
   prikaziStavke = false;
   stavke: Stavke[] = [];
   uplatnica: Uplatnica;
-
+  poruka: string;
+  stiglaPoruka = false;
+  uplatnicaZaSlanje: Uplatnica;
+  potvrde: Potvrda[] = [];
 
   constructor(private uplatnicaService: UplatnicaService,
               private potvrdaService: PotvrdaService,
@@ -53,21 +56,31 @@ export class PotvrdaNovaComponent implements OnInit {
     console.log(this.formPotvrda.value);
     this.potvrda = new Potvrda
     (null, this.formPotvrda.value.datumPotvrde,
-      this.formPotvrda.value.uplatnica, this.formPotvrda.value.uplatnica.clan,
+      this.uplatnicaZaSlanje, this.formPotvrda.value.uplatnica.clan,
       this.stavke);
-    // this.potvrda.uplatnica = this.formPotvrda.value.uplatnica;
-    // this.potvrda.datumIzdavanja = this.formPotvrda.value.datumPotvrde;
-    // this.potvrda.stavke = this.stavke;
     console.log(this.potvrda);
+    this.potvrdaService.poruka.subscribe(poruka => {
+      this.poruka = poruka;
+      this.stiglaPoruka = true;
+    });
     this.potvrdaService.dodajPotvrdu(this.potvrda);
+    this.prikaziStavke = false;
+    this.formPotvrda.reset();
   }
 
-  kreirajStavke(uplatnica: Uplatnica) {
-    console.log(uplatnica);
+  kreirajStavke(uplata: any) {
+    this.stavke = [];
+    console.log(uplata.value);
+    // let uplatnica: Uplatnica = null;
+    for (const upl of this.uplatnice) {
+      if (upl.uplatnicaId === Number.parseFloat(uplata.value)) {
+        this.uplatnicaZaSlanje = upl;
+      }
+    }
     console.log('kliknuo');
-    const brojStavki = uplatnica.iznos / 300;
+    const brojStavki = this.uplatnicaZaSlanje.iznos / 300;
     // idemo do baze i vidimo za odredjenog clana koje sve clanarine on ima neplacene
-    this.clanService.getClan(uplatnica.clan)
+    this.clanService.getClan(this.uplatnicaZaSlanje.clan)
       .subscribe(clanarine => {
         console.log(clanarine);
         // izdvajanje neplacenih od placenih

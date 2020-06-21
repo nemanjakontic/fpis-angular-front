@@ -31,4 +31,13 @@ export class ClanService {
           return response.clan.clanarine;
         }));
   }
+
+  getClanById(clanId: number) {
+    return this.http
+      .get<{clan: Clan, poruka: string}>
+      ('http://localhost:8080/api/clanovi/' + clanId)
+      .pipe(map(response => {
+      return response.clan.clanarine;
+    }));
+  }
 }
