@@ -64,6 +64,7 @@ export class UplatnicaNovaComponent implements OnInit {
 
   formSubmit() {
     this.uplatnica = this.formUplatnica.value;
+    this.uplatnica.potvrdjena = false;
     // this.uplatnica.datumUplate = new Date();
     console.log(this.uplatnica);
     if (this.editMode === true) {

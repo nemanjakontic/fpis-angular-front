@@ -56,7 +56,7 @@ export class PotvrdaNovaComponent implements OnInit {
     console.log(this.formPotvrda.value);
     this.potvrda = new Potvrda
     (null, this.formPotvrda.value.datumPotvrde,
-      this.uplatnicaZaSlanje, this.formPotvrda.value.uplatnica.clan,
+      this.uplatnicaZaSlanje, this.uplatnicaZaSlanje.clan,
       this.stavke);
     console.log(this.potvrda);
     this.potvrdaService.poruka.subscribe(poruka => {

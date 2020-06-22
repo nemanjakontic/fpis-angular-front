@@ -6,8 +6,8 @@
     <!--        <a class="btn btn-primary">PRIKAZI</a>-->
   </div>
   <div class="d-flex flex-column align-content-center text-center">
-    <a class="button-1" (click)="obrisiUplatnicu()">OBRISI</a>
-    <a class="button-2" (click)="izmeniUplatnicu()">IZMENI</a>
+    <button [disabled]="uplatnica.potvrdjena" class="button-1" (click)="obrisiUplatnicu()">OBRISI</button>
+    <button [disabled]="uplatnica.potvrdjena" class="button-2" (click)="izmeniUplatnicu()">IZMENI</button>
   </div>
 </div>
 
