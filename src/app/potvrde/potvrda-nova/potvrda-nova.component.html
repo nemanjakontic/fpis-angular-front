@@ -28,9 +28,9 @@
       <div *ngIf="prikaziStavke && stavke.length === 0">
         <h2>Clan nema neplacene clanarine</h2>
       </div>
-      <div [hidden]="!prikaziStavke || stavke.length === 0">
+      <div [hidden]="!prikaziStavke || stavke.length === 0" >
         <h1>Stavke potvrde</h1>
-        <table class="table">
+        <table class="table" style="color: #F1AE5C">
           <thead>
           <tr>
             <th scope="col">Mesec</th>
@@ -42,7 +42,7 @@
           <tr *ngFor="let stavka of stavke">
             <td>{{stavka.clanarina.mesec}}</td>
             <td>{{stavka.clanarina.godina}}</td>
-            <td>{{stavka.clanarina.iznos}}</td>
+            <td>{{stavka.clanarina.iznos}} RSD</td>
           </tr>
           </tbody>
         </table>

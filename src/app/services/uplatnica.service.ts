@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Uplatnica} from '../modeli/uplatnica.model';
 import {Subject} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -52,12 +53,16 @@ export class UplatnicaService {
 
   updateUplatnica(uplatnica: Uplatnica) {
     console.log(uplatnica);
-    this.http
+    return this.http
       .post<{uplatnica: Uplatnica, poruka: string}>
       ('http://localhost:8080/api/uplate/update', uplatnica)
-      .subscribe(response => {
-        console.log(response);
-      });
+      .pipe(map(response => {
+        return response;
+      }));
+    // )
+    //   .subscribe(response => {
+    //     console.log(response);
+    //   });
   }
 
   getUplatnice() {

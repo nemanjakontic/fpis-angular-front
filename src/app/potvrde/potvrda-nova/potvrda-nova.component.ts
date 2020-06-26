@@ -63,7 +63,23 @@ export class PotvrdaNovaComponent implements OnInit {
       this.poruka = poruka;
       this.stiglaPoruka = true;
     });
-    this.potvrdaService.dodajPotvrdu(this.potvrda);
+    let iznosStavki = 0;
+    // prodjem kroz stavke i vidim koliki je iznos
+    for (const stavka of this.stavke) {
+      iznosStavki += stavka.clanarina.iznos;
+    }
+    let iznosZaNovuUplatnicu = 0;
+    if (iznosStavki < this.uplatnicaZaSlanje.iznos) {
+      iznosZaNovuUplatnicu = this.uplatnicaZaSlanje.iznos - iznosStavki;
+      this.uplatnicaZaSlanje.iznos = iznosStavki;
+      this.uplatnicaService.updateUplatnica(this.uplatnicaZaSlanje)
+        .subscribe(response => {
+          this.potvrdaService.dodajPotvrdu(this.potvrda);
+          this.uplatnicaService.addUplatnica(new Uplatnica(null, new Date(), iznosZaNovuUplatnicu, this.potvrda.clan, false));
+        });
+    } else {
+      this.potvrdaService.dodajPotvrdu(this.potvrda);
+    }
     this.prikaziStavke = false;
     this.formPotvrda.reset();
   }

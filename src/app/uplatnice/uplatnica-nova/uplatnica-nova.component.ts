@@ -69,7 +69,7 @@ export class UplatnicaNovaComponent implements OnInit {
     console.log(this.uplatnica);
     if (this.editMode === true) {
       this.uplatnica.uplatnicaId = this.uplatnicaId;
-      this.uplatnicaService.updateUplatnica(this.uplatnica);
+      this.uplatnicaService.updateUplatnica(this.uplatnica).subscribe(response => console.log(response));
     } else {
       this.uplatnicaService.poruka.subscribe(poruka => {
         this.poruka = poruka;
