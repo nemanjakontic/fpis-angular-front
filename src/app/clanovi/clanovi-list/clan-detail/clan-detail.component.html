@@ -1,0 +1,19 @@
+<div class="card text-center">
+  <div class="card-header">
+    {{clan?.ansambl}} ANSAMBL
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{clan?.clanId}} - {{clan?.ime}} {{clan?.prezime}}</h5>
+    <div class="alert {{clan?.aktivan ? 'alert-success' : 'alert-danger'}}" role="alert">
+      {{clan?.aktivan ? 'AKTIVAN' : 'NEAKTIVAN'}}
+    </div>
+    <p class="card-text">DATUM RODJENJA: {{clan?.datumRodjenja.toString().slice(0,10)}}</p>
+    <p class="card-text">POL: {{clan?.pol}}</p>
+    <p class="card-text">VISINA: {{clan?.visina}}</p>
+    <button class="button-2" routerLink="edit">IZMENI PODATKE O CLANU</button>
+    <button class="button-1" (click)="izmeniAktivnost()">PREBACI CLANA U {{clan?.aktivan ? 'NEAKTIVNE':'AKTIVNE'}}</button>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>

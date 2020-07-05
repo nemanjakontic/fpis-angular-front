@@ -1,11 +1,11 @@
-<div class="card kartica senka" style="width: 18rem;">
-  <img src="{{clan.slika}}" class="card-img-top" alt="...">
+<div class="card kartica senka d-flex flex-column justify-content-between" style="width: 18rem;">
+  <img src="{{clan.slika}}" class="card-img-top okruglaSlika" alt="..." routerLink="/clanovi/{{clan.clanId}}">
   <div class="card-body klasaZaKarticu">
     <h5 class="card-title">{{clan.ime}} {{clan.prezime}}</h5>
     <p class="card-text">{{clan.datumRodjenja.toString().slice(0,10)}}</p>
-    <button routerLink="/{{clan.clanId}}/clanarine" class="button-2">CLANARINE</button>
-    <button routerLink="/{{clan.clanId}}/uplatnice" class="button-1 mb-1 mt-1">UPLATE</button>
-    <button routerLink="/{{clan.clanId}}/potvrde" class="button-2">POTVRDE</button>
+    <button routerLink="/{{clan.clanId}}/clanarine" class="button-2" [disabled]="!this.clan.aktivan">CLANARINE</button>
+    <button routerLink="/{{clan.clanId}}/uplatnice" class="button-1 mb-1 mt-1" [disabled]="!this.clan.aktivan">UPLATE</button>
+    <button routerLink="/{{clan.clanId}}/potvrde" class="button-2" [disabled]="!this.clan.aktivan">POTVRDE</button>
   </div>
 </div>
 

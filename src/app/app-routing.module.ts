@@ -6,11 +6,16 @@ import {UplatnicaNovaComponent} from './uplatnice/uplatnica-nova/uplatnica-nova.
 import {PotvrdeComponent} from './potvrde/potvrde.component';
 import {PotvrdaNovaComponent} from './potvrde/potvrda-nova/potvrda-nova.component';
 import {ClanarineComponent} from './clanarine/clanarine.component';
+import {ClanNoviComponent} from './clanovi/clan-novi/clan-novi.component';
+import {ClanDetailComponent} from './clanovi/clanovi-list/clan-detail/clan-detail.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/clanovi', pathMatch: 'full' },
   { path: 'clanovi', component: ClanoviComponent},
+  { path: 'clanovi/novi', component: ClanNoviComponent},
+  { path: 'clanovi/:id', component: ClanDetailComponent},
+  { path: 'clanovi/:clanId/edit', component: ClanNoviComponent},
   { path: ':id/uplatnice', component: UplatniceComponent},
   { path: ':id/uplatnice/edit/:uplatnicaId', component: UplatnicaNovaComponent},
   { path: 'uplatnice/nova', component: UplatnicaNovaComponent},

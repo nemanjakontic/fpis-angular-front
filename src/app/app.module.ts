@@ -20,6 +20,8 @@ import { PotvrdaNovaComponent } from './potvrde/potvrda-nova/potvrda-nova.compon
 import {DatePipe} from '@angular/common';
 import { ClanarineComponent } from './clanarine/clanarine.component';
 import { ClanarineListComponent } from './clanarine/clanarine-list/clanarine-list.component';
+import { ClanNoviComponent } from './clanovi/clan-novi/clan-novi.component';
+import { ClanDetailComponent } from './clanovi/clanovi-list/clan-detail/clan-detail.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { ClanarineListComponent } from './clanarine/clanarine-list/clanarine-lis
     PotvrdeItemComponent,
     PotvrdaNovaComponent,
     ClanarineComponent,
-    ClanarineListComponent
+    ClanarineListComponent,
+    ClanNoviComponent,
+    ClanDetailComponent
   ],
   imports: [
     BrowserModule,

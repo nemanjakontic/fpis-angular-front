@@ -1,0 +1,60 @@
+<!--<div class="container">-->
+<h1 class="naslov">{{this.editMode ? 'IZMENI' : 'KREIRAJ'}} CLANA</h1>
+<div class="row">
+  <div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+    <div class="alert alert-success" role="alert" *ngIf="stiglaPoruka">
+      {{poruka}}
+    </div>
+    <form [formGroup]="formClan" (ngSubmit)="formSubmit()" class="forma">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="ime">Ime</label>
+          <input type="text" formControlName="ime" id="ime" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="prezime">Prezime</label>
+          <input type="text" formControlName="prezime" id="prezime" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-8">
+          <label for="datumRodjenja">Datum rodjenja</label>
+          <input type="date" formControlName="datumRodjenja" id="datumRodjenja" class="form-control">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="pol">Pol</label>
+          <div id="pol">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" formControlName="pol" type="radio" name="pol" id="inlineRadio1" value="M">
+              <label class="form-check-label" for="inlineRadio1">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" formControlName="pol" type="radio" name="pol" id="inlineRadio2" value="Z">
+              <label class="form-check-label" for="inlineRadio2">Z</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="visina">Visina</label>
+        <select id="visina" formControlName="visina" class="form-control">
+          <option *ngFor="let cm of visina" [value]="cm">{{cm}} cm</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ansambl">Ansambl</label>
+        <select id="ansambl" formControlName="ansambl" class="form-control">
+          <option *ngFor="let ansambl of ansambli">{{ansambl}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="slika">Slika</label>
+        <input type="text" formControlName="slika" id="slika" class="form-control">
+      </div>
+      <button [disabled]="!formClan.valid" type="submit"
+              class="button-1">{{this.editMode ? 'IZMENI CLANA' : 'DODAJ CLANA'}}</button>
+    </form>
+  </div>
+</div>
+
+

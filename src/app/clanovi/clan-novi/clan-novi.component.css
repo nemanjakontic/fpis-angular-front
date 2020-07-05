@@ -9,6 +9,7 @@
   margin: 0;
   font-weight: bold;
   color: #333333;
+  border-top: 3px solid #333333;
 }
 
 .button-2{
@@ -26,7 +27,7 @@
 
 .button-1:hover{
   background-color: #333333;
-  border: none;
+  border: 2px solid saddlebrown;
   outline: none;
   cursor: pointer;
   font: inherit;
@@ -50,34 +51,6 @@
   color: #333333;
 }
 
-.senka {
-  /*-webkit-box-shadow: 3px 6px 12px 6px rgba(241,174,92,0.73);*/
-  /*-moz-box-shadow: 3px 6px 12px 6px rgba(241,174,92,0.73);*/
-  /*box-shadow: 3px 6px 12px 6px rgba(241,174,92,0.73);*/
-
-  -webkit-box-shadow: 3px 6px 12px 6px rgba(0,0,0,1);
-  -moz-box-shadow: 3px 6px 12px 6px rgba(0,0,0,1);
-  box-shadow: 3px 6px 12px 6px rgba(0,0,0,1)
-}
-
-.kartica {
-  border: 2px solid #333333;
-}
-
-.klasaZaKarticu {
-  padding: 0;
-  text-align: center;
-  margin-top: 10px;
-  bottom: 0;
-}
-
-.okruglaSlika {
-  border-radius: 50%;
-  /*width: 18em;*/
-  /*height: 18em;*/
-  background-size: cover;
-}
-
 .button-1:disabled {
   opacity: 0.5;
 }
@@ -94,24 +67,20 @@
   margin: 0;
   font-weight: bold;
   color: #333333;
-  /*border-top: 3px solid #333333;*/
+  border-top: 3px solid #333333;
 }
 
-.button-2:disabled {
-  opacity: 0.5;
-}
-
-.button-2:disabled:hover {
-  opacity: 0.5;
-  background-color: #333333;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font: inherit;
-  padding: 10px;
-  width: 100%;
-  margin: 0;
-  font-weight: bold;
+.forma {
   color: #F1AE5C;
-  /*border-top: 3px solid #333333;*/
+}
+
+.naslov {
+  border: 2px solid #F1AE5C;
+  color: #F1AE5C;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 4.5rem;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
 }

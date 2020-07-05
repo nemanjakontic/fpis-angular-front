@@ -1,6 +1,6 @@
-<div class="row d-flex justify-content-between mb-5">
-  <div class="col-lg-4 col-md-6 col-sm-12 mt-3 px-0 border-col d-flex justify-content-center" *ngFor="let clan of clanovi">
-    <app-clan-item [clan]="clan"></app-clan-item>
+<div class="row mb-5">
+  <div class="col-lg-4 col-md-6 col-sm-12 mt-3 px-0 border-col d-flex flex-wrap justify-content-center" *ngFor="let clan of clanovi">
+    <app-clan-item [clan]="clan" class="d-flex"></app-clan-item>
   </div>
 </div>
 
